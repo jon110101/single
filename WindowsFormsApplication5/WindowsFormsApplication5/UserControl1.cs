@@ -53,7 +53,6 @@ namespace WindowsFormsApplication5
             set { _S = value; }
             get { return _S; }
         }
-        Boolean change = true;
         public UserControl1()
         {
             InitializeComponent();
@@ -68,7 +67,6 @@ namespace WindowsFormsApplication5
                 }
             }
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             using (textboxbutton tb = new textboxbutton())
