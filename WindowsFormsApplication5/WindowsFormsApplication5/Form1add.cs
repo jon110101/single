@@ -134,7 +134,7 @@ namespace WindowsFormsApplication5
         private void add()
         {
             
-            string sql = "insert into Department (Company_Id, Department_Id, Desc_01, Parent_Department_Id, Parent_Company_Id, Remark, Usr__Id, Create__Date, Last_Modify_Date) values ('CYGIA', '" + this.Department_Id_.Text + "','" + this.Desc_01_.Text + "','" + this.UserControl1.PA + "','CYGIA','" + this.Remark_.Text + "','" + this.Usr_Id_.Text + "','" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString() + "')";
+            string sql = "insert into Department (Company_Id, Department_Id, Desc_01, Parent_Department_Id, Parent_Company_Id, Remark, Usr__Id, Create__Date, Last_Modify_Date) values ('CYGIA', '" + this.Department_Id_.Text + "','" + this.Desc_01_.Text + "','" + this.UserControl1.S + "','CYGIA','" + this.Remark_.Text + "','" + this.Usr_Id_.Text + "','" + DateTime.Now.ToString() + "','" + DateTime.Now.ToString() + "')";
             int rst = SqlHelper.ExecuteQuery(sql);
             if (rst == 1)
             {
@@ -143,7 +143,7 @@ namespace WindowsFormsApplication5
         }
         private void ed()
         {
-            string sql = "update Department set Desc_01 = '" + this.Desc_01_.Text + "', Parent_Department_Id = '" + this.UserControl1.PA + "', Remark = '" + this.Remark_.Text + "', Last_Modify_Date = '"  + DateTime.Now.ToString() + "' where Company_Id = '" + Company_Id + "' and Department_Id = '" + Department_Id + "'";
+            string sql = "update Department set Desc_01 = '" + this.Desc_01_.Text + "', Parent_Department_Id = '" + this.UserControl1.S + "', Remark = '" + this.Remark_.Text + "', Last_Modify_Date = '"  + DateTime.Now.ToString() + "' where Company_Id = '" + Company_Id + "' and Department_Id = '" + Department_Id + "'";
             int rst = SqlHelper.ExecuteQuery(sql);
             if (rst == 1)
             {

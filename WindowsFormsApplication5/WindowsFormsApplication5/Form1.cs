@@ -173,7 +173,7 @@ namespace WindowsFormsApplication5
             {
                 //if (this.userControl12.text != this.userControl12.PA_) this.userControl12.PA = this.userControl12.text;
                 //if (this.userControl13.text != this.userControl13.PA_) this.userControl13.PA = this.userControl13.text;
-                sb.Append(string.Format("and Department_Id between '{0}'  and '{1}'", this.userControl12.PA, this.userControl13.PA));
+                sb.Append(string.Format("and Department_Id between '{0}'  and '{1}'", this.userControl12.S, this.userControl13.S));
             }
             if (!string.IsNullOrEmpty(userControl14.text))
             {

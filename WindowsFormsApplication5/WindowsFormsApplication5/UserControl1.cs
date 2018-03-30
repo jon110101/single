@@ -78,6 +78,7 @@ namespace WindowsFormsApplication5
                 tb.DES = DES;
                 if (tb.ShowDialog() == DialogResult.OK)
                 {
+                    //获得PA PA_ 同时S==PA
                     this.textBox1.Text = tb.T1;
                     PA = tb.T;
                     PA_ = tb.T1;
@@ -90,10 +91,13 @@ namespace WindowsFormsApplication5
         {
             if (S == PA)
             {
+                //S==PA 说明PA_与PA在数据库中有值，则需要改变成id
                 textBox1.Text = PA;
             }
         }
-
+        //S作为存储当当前textbox的实际值，PA为id, PA_为离开textbox后显示的值
+        //检查S与text的值及PA的值判断id是否变化，变化则进行查询
+        //实际在窗口点击查询的时候，调用的是此控件的S
         private void textBox1_Leave(object sender, EventArgs e)
         {
             if (textBox1.Text == S)
@@ -102,16 +106,18 @@ namespace WindowsFormsApplication5
             }
             else 
             {
+                //将当前text的值赋给S，用以存储
                 S = textBox1.Text;
                 string sql = "select " + DES + " from " + Temp + " where " + ID + " = '" + textBox1.Text + "'";
                 DataTable dt = SqlHelper.ExecuteDataTable(sql);
                 if (dt == null || dt.Rows.Count < 1 || dt.Rows[0][0].ToString() == "")
                 {
-                    
+                    //数据库中没有则离开后显示的值不变 即S
                     PA_ = S;
                 }
                 else
                 {
+                    //有则S == PA 
                     PA = textBox1.Text;
                     PA_ = dt.Rows[0][0].ToString();
                     S = PA;
